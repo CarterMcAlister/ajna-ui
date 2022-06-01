@@ -5,12 +5,19 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "apps/*"
     ]
   },
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -18,5 +25,24 @@
   },
   "license": "MIT",
   "author": "Carter McAlister",
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@chakra-ui/react": "^2.1.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-table": "^7.7.12",
+    "framer-motion": "^6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "typescript": "^4.7.2",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.16.0",
+    "tsup": "^6.0.1",
+    "@changesets/cli": "^2.22.0",
+    "prettier": "^2.6.2",
+    "turbo": "latest"
+  }
 }

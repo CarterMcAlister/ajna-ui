@@ -1,10 +1,19 @@
 {
-  "name": "@ajna-ui/form",
+  "name": "@ajna-ui/form-input",
   "version": "1.0.0",
   "homepage": "https://github.com/CarterMcAlister/ajna-ui#readme",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup ./src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup ./src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "repository": {
     "type": "git",
@@ -15,7 +24,24 @@
   "author": "Carter McAlister",
   "keywords": [],
   "peerDependencies": {
-    "@chakra-ui/react": "^2.0.0",
-    "react-hook-form": "^7.0.0"
+    "@chakra-ui/hooks": "^2.0.0",
+    "@chakra-ui/system": "^2.0.0",
+    "@chakra-ui/input": "^2.0.0",
+    "react-hook-form": "^7.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "@ajna-ui/form-item": "*"
+  },
+  "devDependencies": {
+    "@chakra-ui/hooks": "^2.0.0",
+    "@chakra-ui/system": "^2.0.0",
+    "@chakra-ui/input": "^2.0.0",
+    "react-hook-form": "^7.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@ajna-ui/form-item": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

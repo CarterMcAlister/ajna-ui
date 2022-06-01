@@ -1,21 +1,51 @@
 {
-  "name": "@ajna-ui/form",
+  "name": "@ajna-ui/form-markdown-editor",
   "version": "1.0.0",
   "homepage": "https://github.com/CarterMcAlister/ajna-ui#readme",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup ./src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup ./src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CarterMcAlister/ajna-ui.git",
-    "directory": "packages/form"
+    "directory": "packages/form-markdown-editor"
   },
   "license": "MIT",
   "author": "Carter McAlister",
   "keywords": [],
+  "dependencies": {
+    "@tiptap/core": "^2.0.0-beta",
+    "@tiptap/react": "^2.0.0-beta",
+    "@tiptap/starter-kit": "^2.0.0-beta"
+  },
   "peerDependencies": {
-    "@chakra-ui/react": "^2.0.0",
-    "react-hook-form": "^7.0.0"
+    "react-icons": "^4.0.0",
+    "@chakra-ui/button": "^2.0.0",
+    "@chakra-ui/layout": "^2.0.0",
+    "react-hook-form": "^7.0.0",
+    "@emotion/react": "^11.0.0",
+    "@ajna-ui/form-item": "*",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "react-icons": "^4.0.0",
+    "@chakra-ui/button": "^2.0.0",
+    "@chakra-ui/layout": "^2.0.0",
+    "react-hook-form": "^7.0.0",
+    "@emotion/react": "^11.0.0",
+    "@ajna-ui/form-item": "*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }

@@ -1,0 +1,45 @@
+{
+  "name": "@ajna-ui/table",
+  "version": "1.0.0",
+  "homepage": "https://github.com/CarterMcAlister/ajna-ui#readme",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup ./src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup ./src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarterMcAlister/ajna-ui.git",
+    "directory": "packages/form"
+  },
+  "license": "MIT",
+  "author": "Carter McAlister",
+  "keywords": [],
+  "dependencies": {
+    "react-table": "^7.0.0"
+  },
+  "peerDependencies": {
+    "@chakra-ui/icon": "^3.0.0",
+    "@chakra-ui/table": "^2.0.0",
+    "@chakra-ui/system": "^2.0.0",
+    "react-icons": "^4.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/icon": "^3.0.0",
+    "@chakra-ui/table": "^2.0.0",
+    "@chakra-ui/system": "^2.0.0",
+    "react-icons": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
