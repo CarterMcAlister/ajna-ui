@@ -1,0 +1,23 @@
+{
+  "name": "@ajna-ui/form",
+  "version": "1.0.0",
+  "homepage": "https://github.com/CarterMcAlister/ajna-ui#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarterMcAlister/ajna-ui.git",
+    "directory": "packages/form"
+  },
+  "license": "MIT",
+  "author": "Carter McAlister",
+  "keywords": [],
+  "peerDependencies": {
+    "@chakra-ui/react": "^2.0.0",
+    "react-hook-form": "^7.0.0",
+    "react": "^18.0.0",
+    "zod": "^3.0.0"
+  }
+}

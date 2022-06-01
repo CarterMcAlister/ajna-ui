@@ -1,0 +1,22 @@
+{
+  "name": "ajna-ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarterMcAlister/ajna-ui.git"
+  },
+  "license": "MIT",
+  "author": "Carter McAlister",
+  "keywords": []
+}
